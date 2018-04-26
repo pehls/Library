@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Library 0.1</string>
+    <string name="title_book_list">Livros</string>
+    <string name="title_book_detail">Detalhes do Livro</string>
+    <string name="title_activity_main_"></string>
+    <string name="navigation_drawer_open">Abrir navegação</string>
+    <string name="navigation_drawer_close">Fechar navegação</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configurações</string>
+    <string name="title_activity_social">Mídias Sociais</string>
+    <string name="title_activity_new_login">Novo Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
