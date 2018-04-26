@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ implements android.support.design.widget.NavigationView.OnNavigationItemSelected
         android.support.design.widget.NavigationView navigationView = (android.support.design.widget.NavigationView) findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
+        Log.v("Activity","onCreate");
 
     }
      @Override
@@ -92,6 +94,48 @@ implements android.support.design.widget.NavigationView.OnNavigationItemSelected
         android.support.v4.widget.DrawerLayout drawer = (android.support.v4.widget.DrawerLayout) findViewById(R.id.drawer_layout_social);
         drawer.closeDrawer(android.support.v4.view.GravityCompat.START);
         return true;
+
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v("Activity","onStart");
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("Activity","onResume");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v("Activity","onPause");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v("Activity","onStop");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.v("Activity","onRestart");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v("Activity","onDestroy");
+
+    }
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -56,6 +57,7 @@ public class Main_Activity extends AppCompatActivity
         final AdRequest.Builder adReq = new AdRequest.Builder();
         final AdRequest adRequest = adReq.build();
         adView.loadAd(adRequest);
+        Log.v("Activity","onCreate");
     }
 
     @Override
@@ -113,5 +115,48 @@ public class Main_Activity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v("Activity","onStart");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("Activity","onResume");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v("Activity","onPause");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v("Activity","onStop");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.v("Activity","onRestart");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v("Activity","onDestroy");
+
     }
 }
