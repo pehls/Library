@@ -45,8 +45,7 @@ public class Main_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
-        TextView name_txt = (TextView) findViewById(R.id.namePerfil_txt);
-        name_txt.setText("Olá, "+nome);
+        ((TextView) findViewById(R.id.namePerfil_txt)).setText("Olá, "+nome);
 
         final AdView adView = new AdView(this);
         adView.setAdUnitId("pub-5942801438808720");

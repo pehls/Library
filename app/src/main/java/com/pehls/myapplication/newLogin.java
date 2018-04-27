@@ -26,10 +26,8 @@ public class newLogin extends AppCompatActivity {
         logar_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView user_txt = (TextView) findViewById(R.id.new_email_txt);
-                TextView senha_txt = (TextView) findViewById(R.id.newpass_txt);
-                String user = user_txt.getText().toString();
-                String senha = senha_txt.getText().toString();
+                String user = ((TextView) findViewById(R.id.new_email_txt)).getText().toString();
+                String senha = ((TextView) findViewById(R.id.newpass_txt)).getText().toString();
                 if (!login.novo(user, senha)) {
                     Toast.makeText(getApplicationContext(), "Usuario já existe!", Toast.LENGTH_LONG).show();
                 } else {

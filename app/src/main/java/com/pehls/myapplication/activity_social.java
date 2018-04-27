@@ -18,8 +18,7 @@ implements android.support.design.widget.NavigationView.OnNavigationItemSelected
         setContentView(R.layout.activity_social);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_social);
-        fab.setOnClickListener(new View.OnClickListener() {
+        ((FloatingActionButton) findViewById(R.id.fab_social)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Breve novas redes sociais", Toast.LENGTH_LONG).show();

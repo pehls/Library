@@ -39,7 +39,7 @@ public class DummyContent {
         ITEM_MAP.put(item.getNome(), item);
     }
 
-    private static Book createDummyItem(int position) {
+    private static Book createDummyItem(int position) { //essa classe deve chamar o repository, para que ele retorne os itens do banco
         return new Book( "Item " + position, makeDetails(position));
     }
 

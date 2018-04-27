@@ -17,8 +17,7 @@ public class login_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TextView forget_txt = (TextView) findViewById(R.id.esqueceu_txt);
-        forget_txt.setOnClickListener(new View.OnClickListener() {
+        ((TextView) findViewById(R.id.esqueceu_txt)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent abreRecuperarSenha = new Intent(login_activity.this, EsqueceuSenhaActivity.class);
@@ -28,10 +27,8 @@ public class login_activity extends AppCompatActivity {
         findViewById(R.id.login_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView user_txt = (TextView) findViewById(R.id.new_email_txt);
-                final String user = user_txt.getText().toString();
-                TextView pass_txt = (TextView) findViewById(R.id.pass_txt);
-                final String password = pass_txt.getText().toString();
+                final String user = ((TextView) findViewById(R.id.new_email_txt)).getText().toString();
+                final String password = ((TextView) findViewById(R.id.pass_txt)).getText().toString();
                 if (login.confere(user, password)) {
                     Intent abreAtividadeMain = new Intent(login_activity.this, Main_Activity.class);
                     Bundle params = new Bundle();

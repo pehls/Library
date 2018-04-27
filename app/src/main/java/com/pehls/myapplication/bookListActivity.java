@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -148,6 +149,7 @@ public class bookListActivity extends AppCompatActivity {
                 }
             }
         };
+
 
         SimpleItemRecyclerViewAdapter(bookListActivity parent,
                                       List<Book> items,
