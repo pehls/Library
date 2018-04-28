@@ -44,7 +44,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
+            app:collapsedTitleGravity="center_vertical|fill_vertical|center"
             app:contentScrim="@color/colorPrimary"
+            app:expandedTitleGravity="center_vertical|center_horizontal"
+            app:expandedTitleMargin="20dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:title="@string/title_book_detail"
             app:toolbarId="@+id/toolbar">
@@ -58,7 +61,10 @@
                 android:visibility="visible"
                 app:buttonGravity="top"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleMargin="30dp"
+                app:titleMarginBottom="20dp"
+                app:titleMargins="@dimen/text_margin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
