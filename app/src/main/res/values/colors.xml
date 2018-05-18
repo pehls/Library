@@ -6,4 +6,7 @@
     <color name="ColorContDark">#128F28</color>
     <color name="ColorContLight">#48DC62</color>
     <color name="ColorTXT">#ffffff</color>
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
 </resources>
