@@ -2,6 +2,8 @@ package com.pehls.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -20,11 +22,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pehls.myapplication.dados.model.Book;
 import com.pehls.myapplication.dummy.DummyContent;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -167,12 +176,30 @@ public class bookListActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(final ViewHolder holder, int position) {
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
             holder.mIdView.setText(mValues.get(position).getNome());
             holder.mContentView.setText(mValues.get(position).getAutor());
+            new Thread() {
+                public void run () {
+                    String resultado = "";
+                    Bitmap img = null;
+                    try {
+                        URL urlImagem = new URL(mValues.get(position).getThumbnail());
+                        HttpURLConnection conexao = (HttpURLConnection) urlImagem.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    final Bitmap finalImage = img;
+                    holder.itemView.setTag(mValues.get(position));
+                    holder.itemView.setOnClickListener(mOnClickListener);
+                    holder.mImageView.setImageBitmap(img);
+                }
+            }.start();
 
-            holder.itemView.setTag(mValues.get(position));
-            holder.itemView.setOnClickListener(mOnClickListener);
         }
 
         @Override
@@ -183,11 +210,14 @@ public class bookListActivity extends AppCompatActivity {
         class ViewHolder extends RecyclerView.ViewHolder {
             final TextView mIdView;
             final TextView mContentView;
+            final ImageView mImageView;
 
             ViewHolder(View view) {
                 super(view);
                 mIdView = (TextView) view.findViewById(R.id.id_text);
                 mContentView = (TextView) view.findViewById(R.id.content);
+                mImageView = (ImageView) view.findViewById(R.id.imageView);
+
             }
         }
     }
